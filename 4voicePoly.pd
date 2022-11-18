@@ -1,0 +1,90 @@
+#N canvas 421 25 859 673 12;
+#X obj 58 192 poly 4 1;
+#X floatatom 94 231 5 0 0 0 - - -, f 5;
+#X floatatom 54 229 5 0 0 0 - - -, f 5;
+#X floatatom 137 230 5 0 0 0 - - -, f 5;
+#X obj 55 279 pack 0 0 0;
+#X obj 55 311 route 1 2 3 4;
+#X text 56 250 voice pitch velocity;
+#X obj 42 368 voice;
+#X obj 82 368 voice;
+#X obj 132 368 voice;
+#X obj 188 367 voice;
+#X text 162 309 allocate pitch and veolocity;
+#X obj 45 446 +~;
+#X obj 152 607 outlet~;
+#X obj 50 146 inlet;
+#X obj 115 145 inlet;
+#X obj 218 481 fmsynth;
+#X text 572 143 brass;
+#X obj 283 479 fmsynth;
+#X obj 350 480 fmsynth;
+#X obj 409 478 fmsynth;
+#X obj 222 518 +~;
+#X obj 222 558 *~ 1;
+#X obj 47 491 *~ 0;
+#X obj 120 400 vsl 15 128 0 1 0 0 empty empty empty 0 -9 0 10 #fcfcfc
+#000000 #000000 0 1;
+#X obj 289 522 vsl 15 128 0 1 0 0 empty empty empty 0 -9 0 10 #fcfcfc
+#000000 #000000 0 1;
+#X floatatom 277 684 5 0 0 0 - - -, f 5;
+#X obj 563 357 r fc/fm;
+#X floatatom 563 398 5 0 0 0 - - -, f 5;
+#X floatatom 630 410 5 0 0 0 - - -, f 5;
+#X obj 630 360 r I;
+#X text 771 146 basson;
+#X text 671 144 GeneralWood;
+#X msg 571 171 \; fc/fm 1 \; I 5 \; octave 1;
+#X floatatom 690 390 5 0 0 0 - - -, f 5;
+#X obj 690 350 r octave;
+#X msg 767 171 \; fc/fm 5 \; I 1.5 \; octave 0.5;
+#X text 576 249 click to choose the presets sound;
+#X obj 476 166 loadbang;
+#X text 490 20 So far I haven't got time to set presets for envelope
+which is an important component of timbre. Each will have a particular
+shape for the tone it trys to emulate. In addition to the use of amplitude
+control \, in FM synth \, envelope is also used to scale the modualtion
+depth to create a dynamic spectra as dynamic spectra is significant
+in timbre distinction as stated by John CHowning.;
+#X msg 665 168 \; fc/fm 0.5 \; I 2 \; octave 1;
+#X text 232 368 wavetable synthesis;
+#X text 30 30 Two synthesis outputs are mixed in parralel. The slider
+controls the volume of one synthesis. With two sliders it can do mixing
+if both are non-zero valued \, solo or mute if one is zero., f 44
+;
+#X connect 0 0 2 0;
+#X connect 0 0 4 0;
+#X connect 0 1 1 0;
+#X connect 0 1 4 1;
+#X connect 0 2 3 0;
+#X connect 0 2 4 2;
+#X connect 4 0 5 0;
+#X connect 5 0 7 0;
+#X connect 5 0 16 0;
+#X connect 5 1 8 0;
+#X connect 5 1 18 0;
+#X connect 5 2 9 0;
+#X connect 5 2 19 0;
+#X connect 5 3 10 0;
+#X connect 5 3 20 0;
+#X connect 7 0 12 0;
+#X connect 8 0 12 0;
+#X connect 9 0 12 0;
+#X connect 10 0 12 0;
+#X connect 12 0 23 0;
+#X connect 14 0 0 0;
+#X connect 15 0 0 1;
+#X connect 16 0 21 0;
+#X connect 18 0 21 0;
+#X connect 19 0 21 0;
+#X connect 20 0 21 0;
+#X connect 21 0 22 0;
+#X connect 22 0 13 0;
+#X connect 23 0 13 0;
+#X connect 24 0 23 1;
+#X connect 25 0 22 1;
+#X connect 25 0 26 0;
+#X connect 27 0 28 0;
+#X connect 30 0 29 0;
+#X connect 35 0 34 0;
+#X connect 38 0 33 0;
